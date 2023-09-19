@@ -1,1 +1,1 @@
-First steps in Pythjon programming.
+First steps in Python programming.
