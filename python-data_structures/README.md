@@ -1,0 +1,1 @@
+learning about tipes of data structures in paython and how to use them.
