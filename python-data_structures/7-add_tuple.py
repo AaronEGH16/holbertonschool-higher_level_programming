@@ -6,14 +6,13 @@ def add_tuple(tuple_a=(), tuple_b=()):
         num1 = 0
     if len(tuple_b) > 0:
         num1 += tuple_b[0]
-    
+
     if len(tuple_a) > 1:
         num2 = tuple_a[1]
     else:
         num2 = 0
     if len(tuple_b) > 1:
         num2 += tuple_b[1]
-    
-    new_tuple=(num1, num2)
-    return new_tuple
 
+    new_tuple = (num1, num2)
+    return new_tuple
