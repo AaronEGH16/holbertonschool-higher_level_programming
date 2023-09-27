@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from curses import keyname
-
-
 def roman_to_int(roman_string):
     res = 0
     if roman_string and type(roman_string) is str:
