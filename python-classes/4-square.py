@@ -10,10 +10,12 @@ class Square:
 
     @property
     def size(self):
+        """ return value of Square size """
         return self.__size
 
     @size.setter
     def size(self, value):
+        """ Set the value of size passed vi arguments """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -21,6 +23,6 @@ class Square:
         self.__size = value
 
     def area(self):
-        print(f"{self.__size}")
+        """ return value of Square area """
         return self.__size * self.__size
     pass
