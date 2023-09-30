@@ -1,0 +1,59 @@
+#IMPORT MODULE#
+>>> add_integer = __import__('0-add_integer').add_integer
+
+#None Values#
+
+test #0: non parameters
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+test #1: non definded variable
+
+>>> add_integer(a, 25)
+Traceback (most recent call last):
+NameError: name 'a' is not defined
+
+test #2: if you not pass b argument programm uses default value
+
+>>> add_integer(2,)
+100
+
+test #3: use default value b with float a
+
+>>> add_integer(-8.0)
+90
+
+#Type Values#
+
+test #4: passed string type of values to a
+
+>>> add_integer("hello", 0)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+test #5: passed list type of value to b
+
+>>> add_integer(3.5, [32, 54, 15])
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+#Number Values#
+
+>>> add_integer(5, 5)
+10
+
+>>> add_integer(-100, 100)
+0
+
+>>> add_integer(1, 1e999)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+#Return Type#
+
+test #9: return type value
+
+>>> type(add_integer(5, 5))
+<class 'int'>
