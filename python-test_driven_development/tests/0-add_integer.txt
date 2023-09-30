@@ -7,12 +7,14 @@ test #0: non parameters
 
 >>> add_integer()
 Traceback (most recent call last):
+...
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
 test #1: non definded variable
 
 >>> add_integer(a, 25)
 Traceback (most recent call last):
+...
 NameError: name 'a' is not defined
 
 test #2: if you not pass b argument programm uses default value
@@ -31,12 +33,14 @@ test #4: passed string type of values to a
 
 >>> add_integer("hello", 0)
 Traceback (most recent call last):
+...
 TypeError: a must be an integer
 
 test #5: passed list type of value to b
 
 >>> add_integer(3.5, [32, 54, 15])
 Traceback (most recent call last):
+...
 TypeError: b must be an integer
 
 #Number Values#
@@ -49,11 +53,19 @@ TypeError: b must be an integer
 
 >>> add_integer(1, 1e999)
 Traceback (most recent call last):
+...
 OverflowError: cannot convert float infinity to integer
+
+test #9: check amount of args passed
+
+>>> add_integer(7, 2, 9)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
 #Return Type#
 
-test #9: return type value
+test #10: return type value
 
 >>> type(add_integer(5, 5))
 <class 'int'>
