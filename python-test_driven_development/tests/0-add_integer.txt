@@ -43,20 +43,32 @@ Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 
+test #6: passed NaN value
+
+>>> add_integer(float("NaN"))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
 #Number Values#
+
+test #7:
 
 >>> add_integer(5, 5)
 10
 
+test #8:
+
 >>> add_integer(-100, 100)
 0
+
+test #9:
 
 >>> add_integer(1, 1e999)
 Traceback (most recent call last):
 ...
 OverflowError: cannot convert float infinity to integer
 
-test #9: check amount of args passed
+test #10: check amount of args passed
 
 >>> add_integer(7, 2, 9)
 Traceback (most recent call last):
@@ -65,7 +77,7 @@ TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
 #Return Type#
 
-test #10: return type value
+test #11: return type value
 
 >>> type(add_integer(5, 5))
 <class 'int'>
