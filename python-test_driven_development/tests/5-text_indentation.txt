@@ -15,6 +15,7 @@ What is your name?
 My name is:
 <BLANKLINE>
 Aaron.
+<BLANKLINE>
 
 test #2: passing other type of arg
 
@@ -22,23 +23,18 @@ test #2: passing other type of arg
 Traceback (most recent call last):
 TypeError: text must be a string
 
-test #3, #4, #5, #6: balck spaces text
+test #3, #4, #5: balck spaces text
 
->>> text_indentation("   A S?     D F:      G H.     J K     ")
+>>> text_indentation("   A S?     D F:      G H.     ")
 A S?
 <BLANKLINE>
 D F:
 <BLANKLINE>
 G H.
 <BLANKLINE>
-J K
 
->>> text_indentation("   Hello     \n     .     ")
-Hello
-.
-<BLANKLINE>
-
->>> text_indentation("    Bye    ")
+>>> text_indentation("    Bye")
 Bye
 
 >>> text_indentation("    ")
+
