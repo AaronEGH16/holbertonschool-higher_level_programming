@@ -11,7 +11,7 @@ def text_indentation(text):
 
     prev = False
     for ch in text:
-        if prev == True:
+        if prev is True:
             prev = False
             continue
         print("{}".format(ch), end="")
