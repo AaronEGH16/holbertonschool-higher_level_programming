@@ -1,19 +1,13 @@
 #IMPORT MODULE#
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-test #0: passing other type of arg
-
->>> text_indentation(20)
-Traceback (most recent call last):
-TypeError: text must be a string
-
-test #1: call it without arg
+test #0: call it without arg
 
 >>> text_indentation()
 Traceback (most recent call last):
 TypeError: text_indentation() missing 1 required positional argument: 'text'
 
-test #2: Functional test
+test #1: Functional test
 
 >>> text_indentation("""What is your name? My name is: Aaron.""")
 What is your name?
@@ -22,3 +16,8 @@ My name is:
 <BLANKLINE>
 Aaron.
 
+test #2: passing other type of arg
+
+>>> text_indentation(20)
+Traceback (most recent call last):
+TypeError: text must be a string
