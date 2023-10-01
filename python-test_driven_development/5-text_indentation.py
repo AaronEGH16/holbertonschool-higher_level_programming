@@ -9,12 +9,6 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    prev = False
-    for ch in text:
-        if prev is True:
-            prev = False
-            continue
-        print("{}".format(ch), end="")
-        if ch == "." or ch == "?" or ch == ":":
-            print("{}".format("\n"))
-            prev = True
+    new_text = text.replace(". ", ".\n\n")\
+        .replace("? ", "?\n\n").replace(": ", ":\n\n")
+    print(new_text, end="")
