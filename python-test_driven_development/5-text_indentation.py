@@ -5,7 +5,7 @@ get string and print whit indentation
 
 
 def text_indentation(text):
-    r""" print text whit \n after '. or ? or :' """
+    """ print text whit \n after '. or ? or :' """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
