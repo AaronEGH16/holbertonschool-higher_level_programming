@@ -1,8 +1,6 @@
 #IMPORT MODULE#
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-#Tests#
-
 test #0: call it without arg
 
 >>> text_indentation()
@@ -23,3 +21,24 @@ test #2: passing other type of arg
 >>> text_indentation(20)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+test #3, #4, #5, #6: balck spaces text
+
+>>> text_indentation("   A S?     D F:      G H.     J K     ")
+A S?
+<BLANKLINE>
+D F:
+<BLANKLINE>
+G H.
+<BLANKLINE>
+J K
+
+>>> text_indentation("   Hello     \n     .     ")
+Hello
+.
+<BLANKLINE>
+
+>>> text_indentation("    Bye    ")
+Bye
+
+>>> text_indentation("    ")
