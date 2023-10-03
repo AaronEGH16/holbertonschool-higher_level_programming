@@ -4,10 +4,6 @@ This Module contains definition of rectangle
 """
 
 
-from ast import Lambda
-from multiprocessing.heap import Arena
-
-
 class Rectangle():
     """
     This class contains ojects that define a Rectangle
