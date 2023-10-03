@@ -51,6 +51,7 @@ class Rectangle():
         and return the completed rectangle of '#' in form of text
         """
         if self.__width != 0 and self.__height != 0:
-            return "\n".join(["#" * self.__width for _ in range(self.__height)])
+            return "\n".join(["#" * self.__width
+                              for _ in range(self.__height)])
         else:
             return ""
