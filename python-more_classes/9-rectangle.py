@@ -10,8 +10,8 @@ class Rectangle():
     """
 
     def __init__(self, width=0, height=0):  # asign initial values to instances
-        self.height = height
         self.width = width
+        self.height = height
         type(self).number_of_instances += 1  # increment global counter
 
     number_of_instances = 0  # public class value counter
