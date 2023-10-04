@@ -1,0 +1,1 @@
+All answers to "Python - Everything is object".
