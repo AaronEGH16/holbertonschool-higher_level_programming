@@ -1,5 +1,7 @@
 #IMPORT MODULE#
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+#ALL TEST#
 >>> bg = BaseGeometry()
 
 test #0: unimplemented function
