@@ -28,15 +28,15 @@ TypeError: BaseGeometry.integer_validator() missing 2 required positional argume
 Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> bg.integer_validator("", None)
+>>> bg.integer_validator("1", None)
 Traceback (most recent call last):
 ...
-TypeError:  must be an integer
->>> bg.integer_validator("", [20, 19])
+TypeError: 1 must be an integer
+>>> bg.integer_validator("2", [20, 19])
 Traceback (most recent call last):
 ...
-TypeError:  must be an integer
->>> bg.integer_validator("", (20, 19))
+TypeError: 2 must be an integer
+>>> bg.integer_validator("3", (20, 19))
 Traceback (most recent call last):
 ...
-TypeError:  must be an integer
+TypeError: 3 must be an integer
