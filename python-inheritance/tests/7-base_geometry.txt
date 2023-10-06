@@ -45,3 +45,11 @@ TypeError: 2 must be an integer
 Traceback (most recent call last):
 ...
 TypeError: 3 must be an integer
+>>> bg.integer_validator("4", "Brother")
+Traceback (most recent call last):
+...
+TypeError: 4 must be an integer
+>>> bg.integer_validator("5", {"Brother":1})
+Traceback (most recent call last):
+...
+TypeError: 5 must be an integer
