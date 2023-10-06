@@ -16,3 +16,24 @@ test #1: execution test
 >>> list1.print_sorted()
 [1, 2, 3]
 
+test #2: empty list
+>>> list2 = MyList()
+>>> print(list2)
+[]
+
+test #3: list of one element
+>>> list3 = MyList()
+>>> list3.append(20)
+>>> print(list3)
+[20]
+
+test #4: list of negative numbers
+>>> list4 = MyList()
+>>> list4.append(-100)
+>>> list4.append(-1)
+>>> list4.append(-5)
+>>> list4.append(-20)
+>>> print(list4)
+[-100, -1, -5, -20]
+>>> list4.print_sorted()
+[-100, -20, -5, -1]
