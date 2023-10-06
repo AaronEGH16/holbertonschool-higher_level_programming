@@ -12,7 +12,7 @@ def is_kind_of_class(obj, a_class):
     Note:
         isinstance() returns True if obj is
             an instance of a_class and any parent
-        issublcass() returns True if obj is
+        issubcass() returns True if obj is
             a subclass of a_class
         type() return a exactly type of obj
     """

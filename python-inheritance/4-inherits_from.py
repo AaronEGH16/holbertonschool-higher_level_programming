@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-this module contains "is_same_class" function
+this module contains "inherits_from" function
 """
 
 
-def is_same_class(obj, a_class):
+def inherits_from(obj, a_class):
     """
-    returns True if obj is exactly an
-    instance of a_class
+    returns True if obj is an
+    inherence of a_class
 
     Note:
         isinstance() returns True if obj is
@@ -16,4 +16,4 @@ def is_same_class(obj, a_class):
             a subclass of a_class
         type() return a exactly type of obj
     """
-    return type(obj) is a_class
+    return type(obj) is not a_class and issubclass(type(obj), a_class)
