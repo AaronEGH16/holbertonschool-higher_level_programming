@@ -3,7 +3,9 @@
 
 test #0: is instance of list?
 
->>> isinstance(MyList(), list)
+>>> isinstance(MyList, list)
+False
+>>> issubclass(MyList, list)
 True
 
 test #1: execution test
@@ -20,11 +22,15 @@ test #2: empty list
 >>> list2 = MyList()
 >>> print(list2)
 []
+>>> list2.print_sorted()
+[]
 
 test #3: list of one element
 >>> list3 = MyList()
 >>> list3.append(20)
 >>> print(list3)
+[20]
+>>> list3.print_sorted()
 [20]
 
 test #4: list of negative numbers
