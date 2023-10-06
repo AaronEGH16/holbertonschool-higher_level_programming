@@ -17,6 +17,12 @@ test #1: execution test
 [2, 3, 1]
 >>> list1.print_sorted()
 [1, 2, 3]
+>>> list1.append(-10)
+>>> list1.append(-5)
+>>> print(list1)
+[2, 3, 1, -10, -5]
+>>> list1.print_sorted()
+[-10, -5, 1, 2, 3]
 
 test #2: empty list
 >>> list2 = MyList()
@@ -32,14 +38,3 @@ test #3: list of one element
 [20]
 >>> list3.print_sorted()
 [20]
-
-test #4: list of negative numbers
->>> list4 = MyList()
->>> list4.append(-100)
->>> list4.append(-1)
->>> list4.append(-5)
->>> list4.append(-20)
->>> print(list4)
-[-100, -1, -5, -20]
->>> list4.print_sorted()
-[-100, -20, -5, -1]
