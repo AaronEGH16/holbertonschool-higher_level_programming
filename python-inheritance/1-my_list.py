@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-
+this module contains a definition of sub class
+of list MyList and their methods
 """
 
 
