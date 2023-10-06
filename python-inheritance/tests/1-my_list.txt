@@ -1,0 +1,18 @@
+#IMPORT MODULE#
+>>> MyList = __import__("1-my_list").MyList
+
+test #0: is instance of list?
+
+>>> isinstance(MyList(), list)
+True
+
+test #1: execution test
+>>> list1 = MyList()
+>>> list1.append(2)
+>>> list1.append(3)
+>>> list1.append(1)
+>>> print(list1)
+[2, 3, 1]
+>>> list1.print_sorted()
+[1, 2, 3]
+
