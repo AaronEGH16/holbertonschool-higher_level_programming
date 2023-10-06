@@ -1,3 +1,22 @@
 #IMPORT MODULE#
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Aaron", 20)
+>>> bg.integer_validator("David", 19)
+>>> bg.integer_validator("Alicia", 0)
+Traceback (most recent call last):
+...
+ValueError: Alicia must be greater than 0
+>>> bg.integer_validator("Carla", -10)
+Traceback (most recent call last):
+...
+ValueError: Carla must be greater than 0
+>>> bg.integer_validator("Camila", 1e999)
+Traceback (most recent call last):
+...
+TypeError: Camila must be an integer
+>>> bg.integer_validator("Nicolas", float("NaN"))
+Traceback (most recent call last):
+...
+TypeError: Nicolas must be an integer
