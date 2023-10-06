@@ -93,3 +93,17 @@ DICRIONARY:
 Traceback (most recent call last):
 ...
 TypeError: 5 must be an integer
+
+BOOLEAN:
+
+>>> bg.integer_validator("6", True)
+Traceback (most recent call last):
+...
+TypeError: 6 must be an integer
+
+SET:
+
+>>> bg.integer_validator("7", {19, 20})
+Traceback (most recent call last):
+...
+TypeError: 7 must be an integer
