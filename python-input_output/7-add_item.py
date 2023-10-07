@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-
+this python script read or make if not exist a json file list
+and append new elements passed by arguments
 """
 import sys
 save_json = __import__("5-save_to_json_file").save_to_json_file
