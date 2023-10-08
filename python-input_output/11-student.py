@@ -44,6 +44,4 @@ class Student:
         """
         load all object class elements from a JSON file
         """
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        (self.__dict__).update(json)
