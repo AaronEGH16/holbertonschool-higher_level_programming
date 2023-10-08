@@ -28,8 +28,13 @@ class Student:
 
     def to_json(self, attrs=None):
         """
-        return a JSON serializable dictionary of object
+        returns a serializable JSON dictionary of the object,
+        filtering the elements
         """
-        if attrs == None:
+        if (attrs is None) or (type(attrs) is not list):
             return self.__dict__
-        pass
+        dic = {}
+        for element in self.__dict__.keys():
+            if element in attrs:
+                dic.update({element: (self.__dict__)[element]})
+        return dic
