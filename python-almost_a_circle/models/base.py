@@ -10,13 +10,10 @@ class Base:
     """
     Base Class:
 
-    Public attributes:
+    Public Attributes:
         id
 
-    Private attributes:
-        __nb_objects
-
-    Methods:
+    Public Methods:
         __init__(self, id=None)
     """
 
