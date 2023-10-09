@@ -24,6 +24,7 @@ class Rectangle(Base):
         x - (getter and setter)
         y - (getter and setter)
         area(self)
+        display(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -119,3 +120,12 @@ class Rectangle(Base):
         returns the result of the area calculation of the rectangle
         """
         return self.__height * self.__width
+
+    def display(self):
+        """
+        print a visual respresentation of the Rectangle
+        """
+        print("\n" * self.__y, end="")
+        for _ in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
