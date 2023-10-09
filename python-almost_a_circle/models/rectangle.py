@@ -11,23 +11,19 @@ class Rectangle(Base):
     """
     Rectangle Class:
 
-    Inherited attributes:
+    Inherited Attributes:
         id
 
-    Public attributes:
+    Public Attributes:
+        None
 
-    Private attributes:
-        __width
-        __height
-        __x
-        __y
-
-    Methods:
+    Public Methods:
         __init__(self, width, height, x=0, y=0, id=None)
         width - (getter and setter)
         height - (getter and setter)
         x - (getter and setter)
         y - (getter and setter)
+        area(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -117,3 +113,9 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+    def area(self):
+        """
+        returns the result of the area calculation of the rectangle
+        """
+        return self.__height * self.__width
