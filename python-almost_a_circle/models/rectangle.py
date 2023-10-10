@@ -26,6 +26,7 @@ class Rectangle(Base):
         area(self)
         display(self)
         __str__(self)
+        update(self, *args, **kwargs)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -137,3 +138,31 @@ class Rectangle(Base):
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """
+        get argument values and update rectangle values with them
+        """
+        if args:
+            for key in range(len(args)):
+                if key == 0:
+                    self.id = args[0]
+                elif key == 1:
+                    self.width = args[1]
+                elif key == 2:
+                    self.height = args[2]
+                elif key == 3:
+                    self.x = args[3]
+                elif key == 4:
+                    self.y = args[4]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
