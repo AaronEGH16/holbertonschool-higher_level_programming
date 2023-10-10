@@ -17,6 +17,9 @@ class Rectangle(Base):
     Public Attributes:
         None
 
+    Inherited Methods:
+        None
+
     Public Methods:
         __init__(self, width, height, x=0, y=0, id=None)
         width - (getter and setter)
@@ -27,6 +30,7 @@ class Rectangle(Base):
         display(self)
         __str__(self)
         update(self, *args, **kwargs)
+        to_dictionary(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -134,7 +138,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        print [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        return string: [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
@@ -143,7 +147,7 @@ class Rectangle(Base):
         """
         get argument values and update rectangle values with them
         """
-        if args:
+        if args and len(args) != 0:
             for key in range(len(args)):
                 if key == 0:
                     self.id = args[0]
@@ -166,3 +170,15 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+        return a dictionary of Rectangle Values
+        """
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+            }

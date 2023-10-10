@@ -30,6 +30,7 @@ class Square(Rectangle):
         size - (getter and setter)
         __str__(self)
         update(self, *args, **kwargs)
+        to_dictionary(self)
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -88,3 +89,14 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+        return a dictionary of Square Values
+        """
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+            }
