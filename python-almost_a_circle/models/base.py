@@ -18,6 +18,7 @@ class Base:
         __init__(self, id=None)
     Static Methods:
         to_json_string(list_dictionaries)
+        from_json_string(json_string)
     Class Methods:
         save_to_file(cls, list_objs)
     """
@@ -59,3 +60,12 @@ class Base:
                 for objs in list_objs:
                     dict.append(cls.to_dictionary(objs))
             file.write(cls.to_json_string(dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        convert JSON string to list of elements
+        """
+        if json_string is None or len(json_string) == 0:
+            json_string = "[]"
+        return json.loads(json_string)
