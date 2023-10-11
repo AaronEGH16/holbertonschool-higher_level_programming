@@ -41,9 +41,5 @@ class Base:
         return a JSON string representation of dictionaries
         """
         if list_dictionaries is None:
-            return "[]"
-
-        if len(list_dictionaries) == 0:
-            return "[]"
-
+            list_dictionaries = []
         return json.dumps(list_dictionaries)
