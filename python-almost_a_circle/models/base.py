@@ -4,6 +4,7 @@ this module contains a
 definition of 'Base Class'
 and their methods and functions
 """
+import json
 
 
 class Base:
@@ -15,6 +16,8 @@ class Base:
 
     Public Methods:
         __init__(self, id=None)
+        to_json_string(list_dictionaries)
+        save_to_file(cls, list_objs)
     """
 
     __nb_objects = 0
@@ -32,3 +35,11 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """
+        return a JSON string representation of dictionaries
+        """
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
