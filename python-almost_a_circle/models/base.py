@@ -53,7 +53,7 @@ class Base:
         create a class JSON file to save a class objects
         """
         filename = "{}.json".format(cls.__name__)
-        with open(filename, "w", encoding="utf-8") as file:
+        with open(filename, "w") as file:
             dict = []
             if (list_objs is not None) or (len(list_objs) != 0):
                 for objs in list_objs:
