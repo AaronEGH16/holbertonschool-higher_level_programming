@@ -22,6 +22,7 @@ class Base:
     Class Methods:
         save_to_file(cls, list_objs)
         create(cls, **dictionary)
+        load_from_file(cls)
     """
 
     __nb_objects = 0
@@ -85,3 +86,19 @@ class Base:
                 dummy = cls(1)
             dummy.update(**dictionary)
             return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        method to load a class object from a JSON class file
+        """
+        filename = "{}.json".format(cls.__name__)
+        obj_list = []
+        try:
+            with open(filename, "r") as file:
+                class_object = cls.from_json_string(file.read())
+            for key in range(len(class_object)):
+                obj_list.append(cls.create(**class_object[key]))
+        except FileNotFoundError:
+            pass
+        return obj_list
