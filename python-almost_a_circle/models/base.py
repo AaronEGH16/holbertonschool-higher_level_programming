@@ -52,9 +52,10 @@ class Base:
         """
         create a class JSON file to save a class objects
         """
-        class_dict = []
+        filename = "{}.json".format(cls.__name__)
+        dict = []
         if (list_objs is not None) or (len(list_objs) != 0):
             for objs in list_objs:
-                class_dict.append(cls.to_dictionary(objs))
-        with open("{}.json".format(cls.__name__), "w") as file:
-            file.write(cls.to_json_string(class_dict))
+                dict.append(cls.to_dictionary(objs))
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(dict))
