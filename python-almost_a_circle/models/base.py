@@ -77,9 +77,11 @@ class Base:
         check the class and if the dictionary is not None,
         create a Class object using the dictionary data
         """
-        if dictionary and dictionary != {}:
+        if cls is not Base and\
+                (dictionary and dictionary != {}):
             if cls.__name__ == "Rectangle":
                 dummy = cls(1, 1)
             else:
                 dummy = cls(1)
-            return dummy.update(**dictionary)
+            dummy.update(**dictionary)
+            return dummy
