@@ -21,6 +21,7 @@ class Base:
         from_json_string(json_string)
     Class Methods:
         save_to_file(cls, list_objs)
+        create(cls, **dictionary)
     """
 
     __nb_objects = 0
@@ -69,3 +70,17 @@ class Base:
         if json_string is None or len(json_string) == 0:
             json_string = "[]"
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        check the class and if the dictionary is not None,
+        create a Class object using the dictionary data
+        """
+        if cls is not Base and\
+                (dictionary and dictionary != {}):
+            if cls.__name__ == "Rectangle":
+                dummy = cls(1, 1)
+            else:
+                dummy = cls(1)
+            return dummy.update(**dictionary)
