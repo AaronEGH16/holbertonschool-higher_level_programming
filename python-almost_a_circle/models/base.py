@@ -14,9 +14,11 @@ class Base:
     Public Attributes:
         id
 
-    Public Methods:
+    Methods:
         __init__(self, id=None)
+    Static Methods:
         to_json_string(list_dictionaries)
+    Class Methods:
         save_to_file(cls, list_objs)
     """
 
@@ -55,4 +57,4 @@ class Base:
             for objs in list_objs:
                 class_dict.append(cls.to_dictionary(objs))
         with open("{}.json".format(cls.__name__), "w") as file:
-            json.dump(class_dict, file)
+            file.write(cls.to_json_string(class_dict))
