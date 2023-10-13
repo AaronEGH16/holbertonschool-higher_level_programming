@@ -5,6 +5,7 @@ definition of 'Base Class'
 and their methods and functions
 """
 import json
+import turtle
 
 
 class Base:
@@ -19,6 +20,7 @@ class Base:
     Static Methods:
         to_json_string(list_dictionaries)
         from_json_string(json_string)
+        draw(list_rectangles, list_squares)
     Class Methods:
         save_to_file(cls, list_objs)
         create(cls, **dictionary)
@@ -102,3 +104,41 @@ class Base:
         except FileNotFoundError:
             pass
         return obj_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draw all Rectangles and Squares from the lists using the turtle module.
+        """
+        draw_turt = turtle.Turtle()
+        draw_turt.screen.bgcolor("#000000")
+        draw_turt.pensize(1)
+        draw_turt.shape("turtle")
+
+        draw_turt.color("#49B43A")
+        for rectangle in list_rectangles:
+            draw_turt.showturtle()
+            draw_turt.up()
+            draw_turt.goto(rectangle.x, rectangle.y)
+            draw_turt.down()
+            for i in range(2):
+                draw_turt.fd(rectangle.width)
+                draw_turt.lt(90)
+                draw_turt.fd(rectangle.height)
+                draw_turt.lt(90)
+            draw_turt.hideturtle()
+
+        draw_turt.color("#1FBBE1")
+        for square in list_squares:
+            draw_turt.showturtle()
+            draw_turt.up()
+            draw_turt.goto(square.x, square.y)
+            draw_turt.down()
+            for i in range(2):
+                draw_turt.fd(square.width)
+                draw_turt.lt(90)
+                draw_turt.fd(square.height)
+                draw_turt.lt(90)
+            draw_turt.hideturtle()
+
+        turtle.exitonclick()
