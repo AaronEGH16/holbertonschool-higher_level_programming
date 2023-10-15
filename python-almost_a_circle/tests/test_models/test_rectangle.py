@@ -3,6 +3,8 @@
 this module contains all test of rectangle module
 """
 import unittest
+from io import StringIO
+from contextlib import redirect_stdout
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -25,6 +27,10 @@ class RectangleClassTest(unittest.TestCase):
         - test x ValueError
         - test y ValueError
         - test Area
+        - test __str__
+        - test display
+        - test update
+        - test to dictionary
     """
     def test_class_inheritance(self):
         self.assertTrue(issubclass(Rectangle, Base))
@@ -110,3 +116,28 @@ class RectangleClassTest(unittest.TestCase):
     def test_Area(self):
         rectangle = Rectangle(2, 5)
         self.assertEqual(rectangle.area(), 10)
+
+    def test_str(self):
+        rectangle = Rectangle(5, 10, 1, 3, 20)
+        self.assertEqual(rectangle.__str__(), "[Rectangle] (20) 1/3 - 5/10")
+
+    def test_display(self):
+        with StringIO() as buf, redirect_stdout(buf):
+            Rectangle(5, 3).display()
+            b = buf.getvalue()
+        self.assertEqual(b, '#####\n#####\n#####\n')
+
+    def test_update_args(self):
+        rectangle = Rectangle(1, 1, 1, 1, 10)
+        rectangle.update(20, 3, 2, 0, 0)
+        self.assertEqual(rectangle.__str__(), "[Rectangle] (20) 0/0 - 3/2")
+
+    def test_update_kwargs(self):
+        rectangle = Rectangle(1, 1, 1, 1, 10)
+        rectangle.update(x=0, height=2, y=0, width=3, id=20)
+        self.assertEqual(rectangle.__str__(), "[Rectangle] (20) 0/0 - 3/2")
+
+    def test_to_dictionary(self):
+        rectangle = Rectangle(2, 5, 1, 1, 20)
+        res = {'x': 1, 'y': 1, 'id': 20, 'height': 5, 'width': 2}
+        self.assertEqual(rectangle.to_dictionary(), res)
