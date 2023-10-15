@@ -56,22 +56,22 @@ class BaseClassTest(unittest.TestCase):
     def test_from_json_none(self):
         js = None
         lis_dic = Base.from_json_string(js)
-        self.assertTrue(type(lis_dic) == list)
+        self.assertTrue(type(lis_dic) is list)
         self.assertTrue(lis_dic == [])
 
     def test_from_json_empty(self):
         js = ""
         lis_dic = Base.from_json_string(js)
-        self.assertTrue(type(lis_dic) == list)
+        self.assertTrue(type(lis_dic) is list)
         self.assertTrue(lis_dic == [])
 
     def test_from_json_correct(self):
         js = '[{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},\
                {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}]'
         lis_dic = Base.from_json_string(js)
-        self.assertTrue(type(js) == str)
-        self.assertTrue(type(lis_dic) == list)
-        self.assertTrue(type(lis_dic[0]) == dict)
+        self.assertTrue(type(js) is str)
+        self.assertTrue(type(lis_dic) is list)
+        self.assertTrue(type(lis_dic[0]) is dict)
         self.assertTrue(lis_dic,
                         [{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},
                          {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}])
@@ -125,6 +125,8 @@ class BaseClassTest(unittest.TestCase):
         self.assertEqual(len(list_dic), 2)
         for key in range(len(list_dic)):
             if key == 0:
-                self.assertEqual(str(list_dic[key]), '[Rectangle] (99) 2/8 - 10/7')
+                self.assertEqual(str(list_dic[key]),
+                                 '[Rectangle] (99) 2/8 - 10/7')
             if key == 1:
-                self.assertEqual(str(list_dic[key]), '[Rectangle] (98) 2/2 - 2/4')
+                self.assertEqual(str(list_dic[key]),
+                                 '[Rectangle] (98) 2/2 - 2/4')
