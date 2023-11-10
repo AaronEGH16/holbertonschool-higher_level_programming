@@ -1,0 +1,1 @@
+All the basic things you should know about SQL.
