@@ -9,9 +9,6 @@ promisURL
     }
   })
   .then((data) => {
-    const div = document.getElementById('hello');
-    const p = document.createElement('p');
-    p.textContent = data.hello;
-    div.appendChild(p);
+    document.getElementById("hello").textContent = data.hello;
   })
   .catch((error) => console.log(error));
